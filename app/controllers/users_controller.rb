@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def register
     user = User.new email: params[:email]
     if user.save
@@ -13,4 +14,5 @@ class UsersController < ApplicationController
       }, status: 400
     end
   end
+  
 end

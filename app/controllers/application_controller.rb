@@ -5,7 +5,6 @@ class ApplicationController < ActionController::API
 
   # Authenticate the user with token based authentication
   def authenticate
-    puts headers
     authenticate_token || render_unauthorized
   end
 
@@ -17,6 +16,8 @@ class ApplicationController < ActionController::API
 
   def render_unauthorized(realm = "Application")
     self.headers["WWW-Authenticate"] = %(Token realm="#{realm.gsub(/"/, "")}")
-    render json: 'Bad credentials', status: :unauthorized
+    render json: {
+      error: "Bad credentials"
+    }, status: :unauthorized
   end
 end

@@ -9,7 +9,7 @@ class ClassifyController < ApplicationController
 
     data = @current_user.train params[:label], params[:data]
     render json: {
-      updated: data
+      success: data
     }, status: 200
   end
 
