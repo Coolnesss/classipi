@@ -1,5 +1,6 @@
 class ClassifyController < ApplicationController
 
+  before_action :authenticate
   before_action :verify_params, only: [:train]
   # Use the classifier instance to train the model,
   # and save it back into the database

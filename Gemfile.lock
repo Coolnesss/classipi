@@ -45,6 +45,8 @@ GEM
       fast-stemmer (~> 1.0)
     coderay (1.1.1)
     concurrent-ruby (1.0.2)
+    email_validator (1.6.0)
+      activemodel
     erubis (2.7.0)
     fast-stemmer (1.0.2)
     ffi (1.9.14)
@@ -132,6 +134,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   classifier-reborn
+  email_validator
   listen (~> 3.0.5)
   pry-rails
   puma (~> 3.0)

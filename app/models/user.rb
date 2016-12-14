@@ -4,6 +4,7 @@ class User < ApplicationRecord
      user.api_key = user.generate_api_key
    end
 
+   validates :email, uniqueness: true, email: true, presence: true
    serialize :model, String
 
    # Initialize a Bayes classifier instance for each new user

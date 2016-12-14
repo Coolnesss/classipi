@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::API
   include ActionController::HttpAuthentication::Token::ControllerMethods
 
-  before_action :authenticate
-
   protected
 
   # Authenticate the user with token based authentication
