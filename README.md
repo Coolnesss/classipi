@@ -1,24 +1,5 @@
-# README
+# Classipi [![Build Status](https://travis-ci.org/Coolnesss/classipi.svg?branch=master)](https://travis-ci.org/Coolnesss/classipi)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A (currently text) classification API built with Rails.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Allows each user to retain a machine learning classification model on the server associated with their API key. Training data can be added and new data can be classified via queries.
