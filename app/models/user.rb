@@ -13,8 +13,12 @@ class User < ApplicationRecord
      save
    end
 
+   def load_model
+     Marshal.load self.model
+   end
+
    def train(label, data)
-    trained_model = Marshal.load model
+    trained_model = load_model
     ret = trained_model.train label, data
     self.model = Marshal.dump trained_model
     save
@@ -22,7 +26,7 @@ class User < ApplicationRecord
    end
 
    def classify(data)
-     trained_model = Marshal.load model
+     trained_model = load_model
      trained_model.classify data
    end
 

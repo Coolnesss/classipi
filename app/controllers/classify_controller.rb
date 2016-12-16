@@ -7,9 +7,10 @@ class ClassifyController < ApplicationController
   def train
     return if performed?
 
-    data = @current_user.train params[:label], params[:data]
+    TrainModelWorker.perform_async @current_user.id, params[:label], params[:data]
+
     render json: {
-      success: data
+      success: "Training enqued"
     }, status: 200
   end
 

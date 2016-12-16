@@ -19,6 +19,8 @@
 require 'rails_helper'
 require 'factory_girl_rails'
 require 'support/factory_girl'
+require 'sidekiq/testing'
+Sidekiq::Testing.fake!
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
