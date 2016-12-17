@@ -43,9 +43,12 @@ GEM
     byebug (9.0.6)
     classifier-reborn (2.0.4)
       fast-stemmer (~> 1.0)
+    codeclimate-test-reporter (1.0.3)
+      simplecov
     coderay (1.1.1)
     concurrent-ruby (1.0.2)
     diff-lcs (1.2.5)
+    docile (1.1.5)
     email_validator (1.6.0)
       activemodel
     erubis (2.7.0)
@@ -59,6 +62,7 @@ GEM
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
+    json (2.0.2)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -135,6 +139,11 @@ GEM
       rspec-mocks (~> 3.5.0)
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
+    simplecov (0.12.0)
+      docile (~> 1.1.0)
+      json (>= 1.8, < 3)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.0)
     slop (3.6.0)
     spring (2.0.0)
       activesupport (>= 4.2)
@@ -165,6 +174,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   classifier-reborn
+  codeclimate-test-reporter (~> 1.0.0)
   email_validator
   factory_girl_rails
   listen (~> 3.0.5)
@@ -174,6 +184,7 @@ DEPENDENCIES
   rails (~> 5.0.0, >= 5.0.0.1)
   rails_12factor
   rspec-rails (~> 3.5)
+  simplecov
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3

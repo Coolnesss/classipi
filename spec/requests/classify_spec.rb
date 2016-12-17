@@ -1,6 +1,14 @@
 describe "Classify API" do
   describe "Without an existing model" do
 
+    def make_request(endpoint, api_key, data)
+      post endpoint, params: data.to_json , headers: {
+        "Authorization" => "Token token=#{api_key}",
+        'Content-Type' => 'application/json',
+        'Accept' => 'application/json'
+      }
+    end
+
     before :each do
       FactoryGirl.create :user
     end
@@ -12,12 +20,7 @@ describe "Classify API" do
       }
 
       expect(User.first.load_model.categories).to be_empty
-
-      post '/train', params: training_data.to_json , headers: {
-        "Authorization" => "Token token=#{User.first.api_key}",
-        'Content-Type' => 'application/json',
-        'Accept' => 'application/json'
-      }
+      make_request('/train', User.first.api_key, training_data)
 
       json = JSON.parse(response.body)
       expect(response).to be_success
@@ -25,7 +28,24 @@ describe "Classify API" do
 
       # Make sure the job was executed
       expect(User.first.load_model.categories).to include "Interesting"
+    end
 
+    it "returns unauthorized with an invalid API key" do
+      make_request('/train', "qwerty", {})
+
+      expect(response).to be_unauthorized
+    end
+
+    it "returns bad request with no label" do
+      make_request('/train', User.first.api_key, {data: "legit data"})
+
+      expect(response).to be_bad_request
+    end
+
+    it "returns bad request with no data" do
+      make_request('/train', User.first.api_key, {label: "good"})
+
+      expect(response).to be_bad_request
     end
 
   end
