@@ -1,4 +1,4 @@
-# Classipi [![Build Status](https://travis-ci.org/Coolnesss/classipi.svg?branch=master)](https://travis-ci.org/Coolnesss/classipi) [![Code Climate](https://codeclimate.com/github/Coolnesss/classipi/badges/gpa.svg)](https://codeclimate.com/github/Coolnesss/classipi)
+# Classipi [![Build Status](https://travis-ci.org/Coolnesss/classipi.svg?branch=master)](https://travis-ci.org/Coolnesss/classipi) [![Code Climate](https://codeclimate.com/github/Coolnesss/classipi/badges/gpa.svg)](https://codeclimate.com/github/Coolnesss/classipi) [![Test Coverage](https://codeclimate.com/github/Coolnesss/classipi/badges/coverage.svg)](https://codeclimate.com/github/Coolnesss/classipi/coverage)
 
 A (currently text) classification API built with Rails.
 
