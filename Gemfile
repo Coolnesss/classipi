@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-
+ruby '2.3.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -23,10 +23,16 @@ gem 'classifier-reborn'
 gem 'email_validator'
 gem 'sidekiq'
 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5'
+  gem 'sqlite3'
 end
 
 group :test do
