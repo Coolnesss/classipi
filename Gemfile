@@ -21,7 +21,7 @@ gem 'puma', '~> 3.0'
 # gem 'rack-cors'
 gem 'classifier-reborn'
 gem 'email_validator'
-gem 'sidekiq'
+gem 'sucker_punch'
 
 group :production do
   gem 'pg'

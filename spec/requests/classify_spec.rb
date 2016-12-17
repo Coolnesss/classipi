@@ -23,11 +23,7 @@ describe "Classify API" do
       expect(response).to be_success
       expect(json).to have_key "success"
 
-      # Make sure the job was enqueued
-      assert_equal 1, TrainModelWorker.jobs.size
-
-      # Make sure it was executed
-      TrainModelWorker.drain
+      # Make sure the job was executed
       expect(User.first.load_model.categories).to include "Interesting"
 
     end
